@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "using-llms-in-business-oreilly"
+version = "0.1.0"
+description = "This is the official repository of code I use for LLMs in Business and Enterprise Applications published by O'Reilly."
+authors = ["Ben Labaschin <benjaminlabaschin@gmail.com>"]
+readme = "README.md"
+packages = [{include = "using_llms_in_business_oreilly"}]
+
+[tool.poetry.dependencies]
+python = "3.11.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
