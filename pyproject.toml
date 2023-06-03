@@ -8,6 +8,15 @@ packages = [{include = "using_llms_in_business_oreilly"}]
 
 [tool.poetry.dependencies]
 python = "3.11.1"
+pandas = "^2.0.2"
+matplotlib = "^3.7.1"
+seaborn = "^0.12.2"
+kaggle = "^1.5.13"
+python-dotenv = "^1.0.0"
+ipykernel = "^6.23.1"
+jupyter = "^1.0.0"
+transformers = {extras = ["agents"], version = "^4.29.2"}
+torch = "^2.0.1"
 
 
 [build-system]
