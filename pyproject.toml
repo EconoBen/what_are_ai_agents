@@ -16,8 +16,16 @@ python-dotenv = "^1.0.0"
 ipykernel = "^6.23.1"
 jupyter = "^1.0.0"
 transformers = {extras = ["agents"], version = "^4.29.2"}
-torch = "^2.0.1"
+torch = {url = "https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp311-cp311-linux_x86_64.whl"}
+diffusers = {extras = ["torch"], version = "^0.17.1"}
+accelerate = "^0.20.3"
 
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu118"
+default = false
+secondary = true
 
 [build-system]
 requires = ["poetry-core"]
