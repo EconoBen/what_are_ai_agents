@@ -1,24 +1,21 @@
 [tool.poetry]
-name = "using-llms-in-business-oreilly"
+name = "what is an ai agent"
 version = "0.1.0"
-description = "This is the official repository of code I use for LLMs in Business and Enterprise Applications published by O'Reilly."
+description = ""
 authors = ["Ben Labaschin <benjaminlabaschin@gmail.com>"]
 readme = "README.md"
-packages = [{include = "using_llms_in_business_oreilly"}]
 
 [tool.poetry.dependencies]
 python = "3.11.1"
-pandas = "^2.0.2"
-matplotlib = "^3.7.1"
-seaborn = "^0.12.2"
-kaggle = "^1.5.13"
 python-dotenv = "^1.0.0"
 ipykernel = "^6.23.1"
 jupyter = "^1.0.0"
-transformers = {extras = ["agents"], version = "^4.29.2"}
-torch = {url = "https://download.pytorch.org/whl/cu118/torch-2.0.1%2Bcu118-cp311-cp311-linux_x86_64.whl"}
-diffusers = {extras = ["torch"], version = "^0.17.1"}
-accelerate = "^0.20.3"
+chainlit = "^0.6.1"
+openai = "^0.27.8"
+langchain = "^0.0.253"
+pandasai = "0.8.2"
+hugchat = "^0.1.0"
+streamlit = "^1.25.0"
 
 
 [[tool.poetry.source]]
@@ -30,3 +27,49 @@ secondary = true
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Enable the pycodestyle (`E`) and Pyflakes (`F`) rules by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E", "F"]
+ignore = []
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+per-file-ignores = {}
+
+# Same as Black.
+line-length = 88
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.11.
+target-version = "py311"
