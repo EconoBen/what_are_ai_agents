@@ -1,46 +1,19 @@
-# What Is An AI Agent: O'Reilly Edition
+# What Are AI Agents? (Companion Code)
 
-## Table of Contents
+Companion code for my O'Reilly report **[What Are AI Agents? When and How to Use LLM Agents](https://www.oreilly.com/library/view/what-are-ai/9781098159726/)**. The report introduces AI agents, how they differ from large language models, and when to use them. This repository holds two small, runnable examples that go with it.
 
-1. [Introduction](#introduction)
-2. [Installation](#installation)
-3. [Usage](#usage)
-   - [Document Question-Answering](#document-question-answering)
-   - [Chatbot](#chatbot)
-4. [File Structure](#file-structure)
-5. [Contributing](#contributing)
-6. [License](#license)
-7. [Acknowledgments](#acknowledgments)
+## What's inside
 
-## Introduction
-
-This repository is created as part of an O'Reilly project to explore the fundamentals of AI agents. It features two main components:
-
-1. **Document Question-Answering (`src/01_document_qa.py`)**: Utilizes a conversational model to answer questions based on a given text dataset.
-2. **Chatbot (`src/02_chatbot.py`)**: A simple chatbot implemented using Hugging Face's `hugchat` library.
+- **Document Question-Answering** (`src/01_document_qa.py`). Answers questions over a text dataset with a conversational model.
+- **Chatbot** (`src/02_chatbot.py`). A simple chatbot built on Hugging Face's `hugchat` and served with Streamlit.
 
 ## Installation
 
-### Requirements
-
-- Python 3.6+
-- poetry for dependency management
-
-Clone the repository:
+Requires a recent Python and [Poetry](https://python-poetry.org/).
 
 ```bash
-git clone https://github.com/yourusername/what_is_an_ai_agent_oreilly.git
-```
-
-Navigate to the project directory:
-
-```bash
-cd what_is_an_ai_agent_oreilly/
-```
-
-Install the dependencies:
-
-```bash
+git clone https://github.com/EconoBen/what_are_ai_agents.git
+cd what_are_ai_agents
 poetry install
 ```
 
@@ -48,64 +21,52 @@ poetry install
 
 ### Document Question-Answering
 
-1. **Environment Setup**: Create a `.env` file in the project root and set your OpenAI API key:
+1. Create a `.env` file in the project root with your OpenAI key.
 
    ```env
    OPENAI_API_KEY=your_api_key_here
    ```
 
-2. **Data Preparation**: Place your `.csv` data files in the `data/sample_book_dataset/` directory.
-
-3. **Run the Script**: Execute the following command:
+2. Place your `.csv` files in `data/sample_book_dataset/`.
+3. Run it.
 
    ```bash
    python src/01_document_qa.py
    ```
 
-4. **Follow the Instructions**: Upload your text file when prompted and interact with the agent.
-
 ### Chatbot
 
-1. **Environment Setup**: Add your Hugging Face credentials to Streamlit's secrets:
+1. Add your Hugging Face credentials to Streamlit secrets in `.streamlit/secrets.toml`.
 
-   ```bash
-   st.secrets["HUGGINGFACE_EMAIL"] = your_email_here
-   st.secrets["HUGGINGFACE_PASSWORD"] = your_password_here
+   ```toml
+   HUGGINGFACE_EMAIL = "your_email_here"
+   HUGGINGFACE_PASSWORD = "your_password_here"
    ```
 
-2. **Run the Script**: Execute the following command:
+2. Run it.
 
    ```bash
    streamlit run src/02_chatbot.py
    ```
 
-3. **Interact**: Open the Streamlit app and start chatting with the bot.
+## File structure
 
-## File Structure
-
-```plaintext
+```
 .
 ├── data/
-│   ├── sample_book_dataset/
+│   └── sample_book_dataset/
+├── src/
+│   ├── 01_document_qa.py
+│   └── 02_chatbot.py
 ├── Makefile
-├── poetry.lock
 ├── pyproject.toml
-├── README.md
-└── src/
-    ├── 01_document_qa.py
-    └── 02_chatbot.py
+└── README.md
 ```
-
-## Contributing
-
-If you wish to contribute to this project, please read the [CONTRIBUTING.md](CONTRIBUTING.md) guide.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE.md](LICENSE.md) file for details.
+MIT
 
-## Acknowledgments
+## Author
 
-- O'Reilly for the opportunity to explore AI agents.
-- OpenAI for their conversational models.
-- Hugging Face for their `hugchat` library.
+Built by [Ben Labaschin](https://econoben.dev), O'Reilly author on AI agents and agent memory.
